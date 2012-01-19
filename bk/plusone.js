@@ -22,8 +22,7 @@ page.onLoadFinished = function (status) {
   page.evaluate(function() {
 //    console.log("awesome");
 //    console.log(document.body.innerHTML);
-//    console.log(document.getElementById("aggregateCount").innerText);
-    console.log(window.__SSR.c);
+    console.log(document.getElementById("aggregateCount").innerText);
   });
   phantom.exit();
 };
