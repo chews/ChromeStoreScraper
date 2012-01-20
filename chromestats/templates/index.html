@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Chromestore</title>
+    <style>
+    .row2{
+        background-color:#cacaca;
+    }
+    </style>
 </head>
 
 <body>
@@ -42,7 +47,7 @@
 
                     </tr>
                 {% for extension in extensions %}
-                    <tr>
+                    <tr class="{% cycle 'row1' 'row2' %}">
                         <td>{{extension.storeposition}}. <img src="{{extension.icon}}">
                         </td>
                         <td>
