@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Chromestore</title>
+</head>
+
+<body>
+    <div id="content" style="padding-bottom:40px; margin-left:0px;">
+        <div class="article">
+            
+            <h1>Plugins</h1>
+            
+            <table>
+                    <tr>
+                        <td>Rank
+                        </td>
+                        <td>Name /  Description
+                        </td>
+                        <td>Rating
+                        </td>
+                        <td>Category
+                        </td>
+                        <td>
+                            UserCount
+                        </td>
+                        <td>
+                            Plusones
+                        </td>
+                        <td>
+                            Version
+                        </td>
+                        <td>
+                            Updated
+                        </td>
+                        <td>
+                            Language
+                        </td>
+                        <td>
+                            AllSites
+                        </td>
+
+                    </tr>
+                {% for extension in extensions %}
+                    <tr>
+                        <td>{{extension.storeposition}}. <img src="{{extension.icon}}">
+                        </td>
+                        <td>
+                        <a href="/detail/{{extension.guid}}">{{extension.name}} - {{extension.description}}</a>
+                        </td>
+                        <td>{{extension.rating}}
+                        </td>
+                        <td>{{extension.category}}
+                        </td>
+                        <td>{{extension.current_usercount}}
+                        </td>
+                        <td>{{extension.plusone}}
+                        </td>
+                        <td>{{extension.version}}
+                        </td>
+                        <td>{{extension.updated}}
+                        </td>
+                        <td>{{extension.language}}
+                        </td>
+                        <td>
+                        {{extension.allwebsites}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div><!-- article -->
+    </div><!-- content -->    
+</body>
+</html>

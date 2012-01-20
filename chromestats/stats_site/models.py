@@ -16,10 +16,12 @@ class ChromeAppData(Document):
     category = StringField(max_length=255)
     current_usercount = IntField()
     initial_usercount = IntField()
-    description = StringField(max_length=255)
+    description = StringField()
     version = StringField(max_length=255)
     updated = StringField(max_length=255)
-    language = StringField(max_length=255)
+    language = StringField()
+    storeposition = IntField()
+    plusone = IntField()
     allwebsites = IntField()
 
 
@@ -27,5 +29,6 @@ class ChromeAppHistricData(Document):
     guid = StringField(max_length=255)
     usercount = IntField()
     plusone = IntField()
+    rating = FloatField()
     storeposition = IntField()
     date = DateTimeField()

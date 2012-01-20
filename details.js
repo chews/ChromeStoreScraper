@@ -43,10 +43,12 @@ function is_ready()
   return _ready;
 }
 page.onLoadFinished = function (status) {
-    setTimeout(function(){
+    setInterval(function(){
       if (is_ready()){
+        if (!h) return;
+        h = false;
         page.evaluate(function() {
-          //console.log(document.body.innerHTML);
+          //phantomjs details.js gjndloejlcbpkholmagjbddfkjmmploh
           var name = document.getElementsByClassName("detail-dialog-title")[0].innerText;
           var icon = document.getElementsByClassName("detail-dialog-icon")[1].src;
           var rating = document.getElementsByClassName("rsw-stars inline")[0].attributes[4].value;
@@ -57,11 +59,14 @@ page.onLoadFinished = function (status) {
           var updated = document.getElementsByClassName("details-tab-right-version-info-label")[1].nextSibling.nodeValue.substring(1);
           var language = document.getElementsByClassName("details-tab-right-version-info-label")[2].nextSibling.nodeValue.substring(1);
           aw = 2;
-          if(document.getElementsByClassName("details-tab-right-info-permissions-list")[0].innerHTML.indexOf("all websites") == -1)
-           {
-             aw = 2;
-           } else {
-             aw = 1;
+          if (document.getElementsByClassName("details-tab-right-info-permissions-list").length > 0)
+          {
+            if(document.getElementsByClassName("details-tab-right-info-permissions-list")[0].innerHTML.indexOf("all websites") == -1)
+             {
+               aw = 2;
+             } else {
+               aw = 1;
+            }            
           }
           var jsod = {
             "name":name,
