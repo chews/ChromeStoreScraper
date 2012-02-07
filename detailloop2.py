@@ -60,48 +60,9 @@ def batch(arr):
         jobs.append(p)
         p.start()
         print "started job"
-    
-    # print "waiting"
-    # time.sleep(1.0)
-    # exit_early = True
-    # for i in range(0,len(jobs)):
-    #     if (jobs[i].is_alive()):
-    #         exit_early = False
-    # if exit_early:
-    #     return
-    # print "waiting"
-    # time.sleep(1.0)
-    # exit_early = True
-    # for i in range(0,len(jobs)):
-    #     if (jobs[i].is_alive()):
-    #         exit_early = False
-    # if exit_early:
-    #     return
-    # print "waiting"
-    # time.sleep(1.0)
-    # exit_early = True
-    # for i in range(0,len(jobs)):
-    #     if (jobs[i].is_alive()):
-    #         exit_early = False
-    # if exit_early:
-    #     return
-    # print "waiting"
-    # time.sleep(1.0)
-    # exit_early = True
-    # for i in range(0,len(jobs)):
-    #     if (jobs[i].is_alive()):
-    #         exit_early = False
-    # if exit_early:
-    #     return
-    # print "waiting"
-    # time.sleep(1.0)
-    # exit_early = True
-    # for i in range(0,len(jobs)):
-    #     if (jobs[i].is_alive()):
-    #         exit_early = False
-    # if exit_early:
-    #     return
-    time.sleep(7.0)
+
+    time.sleep((len(jobs)*1.47))
+
     for i in range(0,len(jobs)):
         if (jobs[i].is_alive()):
             print "killing job"
