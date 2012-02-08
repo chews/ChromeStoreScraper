@@ -61,7 +61,8 @@ def batch(arr):
         p.start()
         print "started job"
 
-    time.sleep((len(jobs)*1.47))
+    for i in range(0,len(arr)):
+        time.sleep(2.0)
 
     for i in range(0,len(jobs)):
         if (jobs[i].is_alive()):
